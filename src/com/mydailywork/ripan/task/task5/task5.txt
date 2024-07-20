@@ -1,0 +1,57 @@
+STUDENT COURSE REGISTRATION SYSTEM
+===================================
+Course Database: Store course information:: including course code, title, description, capacity, and schedule.
+Student Database: Store student information:: including student ID, name, and registered courses.
+Course Listing: Display available courses with details and available slots.
+Student Registration: Allow students to register for courses from the available options.
+Course Removal: Enable students to drop courses they have registered for.
+
+
++++ Databases +++
+Courses ::
+
+mysql> select * from courses;
++-----+---------+----------------------------------+-----------------------------------------------+----------+---------------------------+
+| cid | ccode   | ctitle                           | cdescription                                  | capacity | schedule                  |
++-----+---------+----------------------------------+-----------------------------------------------+----------+---------------------------+
+|   1 | CS101   | Introduction to Computer Science | Basic concepts of computer science            |       30 | Mon/Wed/Fri 10:00 - 11:00 |
+|   2 | CS102   | Data Structures                  | Introduction to data structures               |       25 | Tue/Thu 09:00 - 10:30     |
+|   3 | CS103   | Algorithms                       | Advanced algorithms and techniques            |       20 | Mon/Wed 11:00 - 12:30     |
+|   4 | CS104   | Database Systems                 | Fundamentals of database systems              |       35 | Fri 14:00 - 17:00         |
+|   5 | CS105   | Operating Systems                | Introduction to operating systems             |       28 | Tue/Thu 11:00 - 12:30     |
+|   6 | MATH101 | Calculus I                       | Basics of calculus and differential equations |       40 | Mon/Wed 09:00 - 10:30     |
+|   7 | MATH102 | Linear Algebra                   | Introduction to linear algebra concepts       |       30 | Tue/Thu 13:00 - 14:30     |
+|   8 | PHYS101 | Physics I                        | Fundamentals of classical mechanics           |       25 | Mon/Wed/Fri 08:00 - 09:00 |
+|   9 | CHEM101 | Chemistry I                      | Basic principles of chemistry                 |       32 | Tue/Thu 15:00 - 16:30     |
+|  10 | BIO101  | Biology I                        | Introduction to biological sciences           |       20 | Mon/Wed 14:00 - 15:30     |
++-----+---------+----------------------------------+-----------------------------------------------+----------+---------------------------+
+
+Students ::
+mysql> select * from students;
++-----+---------------+------------+
+| sid | sname         | reg_c_code |
++-----+---------------+------------+
+|   1 | ripan baidya  | CS101      |
+|   2 | torsha dey    | MATH101    |
+|   3 | dipa haldar   | CS101      |
+|   4 | raghav yadav  | CS102      |
+|   5 | sampriti das  | MATH101    |
+|   6 | sam singh     | CS103      |
+|   7 | sankeet pal   | CS102      |
+|   8 | nikhil tiwari | CS101      |
+|   9 | sayan mallik  | CS103      |
+|  10 | rupa saha     | CS102      |
++-----+---------------+------------+
+
+Registration ::
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| cid    | int         | NO   | PRI | NULL    |       |
+| c_code | varchar(20) | NO   |     | NULL    |       |
+| sid    | int         | NO   | PRI | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+
+
+
+
